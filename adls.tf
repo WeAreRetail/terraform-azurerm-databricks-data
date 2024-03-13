@@ -1,6 +1,6 @@
 module "private_endpoint_adls" {
   source  = "WeAreRetail/private-endpoint/azurerm"
-  version = "1.0.0"
+  version = "1.0.1"
 
   count = var.private_endpoint && length(var.dns_zone_name) > 0 ? 1 : 0
 
@@ -14,7 +14,7 @@ module "private_endpoint_adls" {
 
 module "private_endpoint_adls_blob_dfs" {
   source  = "WeAreRetail/private-endpoint/azurerm"
-  version = "1.0.0"
+  version = "1.0.1"
 
   count = var.private_endpoint && length(var.dns_zone_name) == 0 && can(tostring(var.dns_zones_dfs.dns_group_name)) ? 1 : 0
 
@@ -34,7 +34,7 @@ module "private_endpoint_adls_blob_dfs" {
 
 module "private_endpoint_adls_blob_blob" {
   source  = "WeAreRetail/private-endpoint/azurerm"
-  version = "1.0.0"
+  version = "1.0.1"
 
   count = var.private_endpoint && length(var.dns_zone_name) == 0 && can(tostring(var.dns_zones_blob.dns_group_name)) ? 1 : 0
 
