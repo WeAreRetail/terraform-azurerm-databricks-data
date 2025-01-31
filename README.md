@@ -79,7 +79,7 @@ No outputs.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_adls"></a> [adls](#input\_adls) | Configuration for Databricks mount | <pre>object({<br>    storage_account_id = string<br>    container_id       = string<br>    name               = string<br>  })</pre> | n/a | yes |
+| <a name="input_adls"></a> [adls](#input\_adls) | Configuration for Databricks mount | <pre>object({<br/>    storage_account_id = string<br/>    container_id       = string<br/>    name               = string<br/>  })</pre> | n/a | yes |
 | <a name="input_caf_prefixes"></a> [caf\_prefixes](#input\_caf\_prefixes) | Prefixes for CAF naming. | `list(string)` | n/a | yes |
 | <a name="input_databricks_security_scope"></a> [databricks\_security\_scope](#input\_databricks\_security\_scope) | Security scope for mount secrets. | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group name. | `string` | n/a | yes |
@@ -87,8 +87,8 @@ No outputs.
 | <a name="input_spn_secret_key"></a> [spn\_secret\_key](#input\_spn\_secret\_key) | Spn Secret key in security scope | `string` | n/a | yes |
 | <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Virtual network subnet for endpoints. | `string` | n/a | yes |
 | <a name="input_dns_zone_name"></a> [dns\_zone\_name](#input\_dns\_zone\_name) | Private link DNS zone name. | `string` | `""` | no |
-| <a name="input_dns_zones_blob"></a> [dns\_zones\_blob](#input\_dns\_zones\_blob) | Private link DNS zones ids for blob | <pre>object({<br>    dns_group_name = string<br>    dns_zones_ids  = list(string)<br>  })</pre> | `null` | no |
-| <a name="input_dns_zones_dfs"></a> [dns\_zones\_dfs](#input\_dns\_zones\_dfs) | Private link DNS zones ids for dfs. | <pre>object({<br>    dns_group_name = string<br>    dns_zones_ids  = list(string)<br>  })</pre> | `null` | no |
+| <a name="input_dns_zones_blob"></a> [dns\_zones\_blob](#input\_dns\_zones\_blob) | Private link DNS zones ids for blob | <pre>object({<br/>    dns_group_name = string<br/>    dns_zones_ids  = list(string)<br/>  })</pre> | `null` | no |
+| <a name="input_dns_zones_dfs"></a> [dns\_zones\_dfs](#input\_dns\_zones\_dfs) | Private link DNS zones ids for dfs. | <pre>object({<br/>    dns_group_name = string<br/>    dns_zones_ids  = list(string)<br/>  })</pre> | `null` | no |
 | <a name="input_private_endpoint"></a> [private\_endpoint](#input\_private\_endpoint) | Create private endpoint to the storage account. Default: true | `bool` | `true` | no |
 
 #### Outputs
