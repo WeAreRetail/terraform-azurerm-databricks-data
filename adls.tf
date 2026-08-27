@@ -1,3 +1,10 @@
+data "azurerm_private_dns_zone" "adls" {
+  count = var.private_endpoint && length(var.dns_zone_name) > 0 ? 1 : 0
+
+  name                = var.dns_zone_name
+  resource_group_name = var.resource_group_name
+}
+
 module "private_endpoint_adls" {
   source  = "WeAreRetail/private-endpoint/azurerm"
   version = "1.0.1"
@@ -57,8 +64,7 @@ resource "azurerm_private_dns_a_record" "adls" {
   count = var.private_endpoint && length(var.dns_zone_name) > 0 ? 1 : 0
 
   name                = module.private_endpoint_adls[0].linked_resource_name
-  zone_name           = var.dns_zone_name
-  resource_group_name = var.resource_group_name
+  private_dns_zone_id = data.azurerm_private_dns_zone.adls[0].id
   ttl                 = 300
   records             = [module.private_endpoint_adls[0].private_ip]
   tags                = local.parent_tags
