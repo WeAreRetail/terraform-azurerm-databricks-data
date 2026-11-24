@@ -70,7 +70,7 @@ No outputs.
 #### Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 5.0.0 |
 | <a name="requirement_databricks"></a> [databricks](#requirement\_databricks) | >= 1.0.0 |
@@ -78,7 +78,7 @@ No outputs.
 #### Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_adls"></a> [adls](#input\_adls) | Configuration for Databricks mount | <pre>object({<br/>    storage_account_id = string<br/>    container_id       = string<br/>    name               = string<br/>  })</pre> | n/a | yes |
 | <a name="input_caf_prefixes"></a> [caf\_prefixes](#input\_caf\_prefixes) | Prefixes for CAF naming. | `list(string)` | n/a | yes |
 | <a name="input_databricks_security_scope"></a> [databricks\_security\_scope](#input\_databricks\_security\_scope) | Security scope for mount secrets. | `string` | n/a | yes |
